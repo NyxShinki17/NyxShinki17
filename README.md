@@ -53,6 +53,11 @@
   </tr>
 </table>
 
+<h2 align="center">🐍 My GitHub Snake 🐍</h2>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/NyxShinki17/NyxShinki17/output/github-snake-dark.svg" alt="Snake animation (dark mode)" />
+</div>
+
 <h3 align="center">✍️ Random Dev Quote</h3>
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote"/>
