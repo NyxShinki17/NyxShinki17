@@ -1,0 +1,36 @@
+name: Generate Snake Animation
+
+on:
+  # Chạy tự động mỗi 6 tiếng
+  schedule:
+    - cron: "0 */6 * * *"
+  
+  # Cho phép bạn chạy thủ công từ tab "Actions"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Tạo file ảnh động con rắn
+      - uses: Platane/snk@v3
+        id: snake
+        with:
+          # Tên user GitHub của bạn
+          github_user_name: NyxShinki17
+          
+          # Tên các file output
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      # Push file ảnh đã tạo vào một nhánh riêng (ví dụ: nhánh 'output')
+      - uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
